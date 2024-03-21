@@ -1,5 +1,6 @@
 package com.miguel.spring.infrastructure.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -22,6 +23,7 @@ public class Pizza  implements Serializable {
     @Column(name = "price")
     private Double price;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "pizzaId")
     private List<Request> requests = new ArrayList<>();
 

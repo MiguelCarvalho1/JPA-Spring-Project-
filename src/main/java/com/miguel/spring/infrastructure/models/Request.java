@@ -1,5 +1,6 @@
 package com.miguel.spring.infrastructure.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -17,6 +18,7 @@ public class Request implements Serializable {
     private Long id;
 
     @Column(name = "date")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
     private LocalDateTime date;
 
     @Column(name = "amount")

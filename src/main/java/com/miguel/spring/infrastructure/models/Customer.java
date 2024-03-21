@@ -1,5 +1,6 @@
 package com.miguel.spring.infrastructure.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -22,6 +23,7 @@ public class Customer implements Serializable {
     @Column(name = "address", length = 255)
     private String address;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "customer")
     private List<Request> requests = new ArrayList<>();
 
