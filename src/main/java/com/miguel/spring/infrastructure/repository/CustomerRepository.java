@@ -1,6 +1,6 @@
-package infrastructure.repository;
+package com.miguel.spring.infrastructure.repository;
 
-import infrastructure.models.Customer;
+import com.miguel.spring.infrastructure.models.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CustomerRepository extends JpaRepository<Customer, String> {

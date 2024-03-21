@@ -1,4 +1,4 @@
-package infrastructure.models;
+package com.miguel.spring.infrastructure.models;
 
 import jakarta.persistence.*;
 
