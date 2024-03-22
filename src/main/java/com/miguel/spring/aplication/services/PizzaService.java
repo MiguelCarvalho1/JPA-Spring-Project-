@@ -23,7 +23,7 @@ public class PizzaService {
     }
 
     public Pizza findById(Long id){
-        Optional<Pizza> optional = pizzaRepository.findById(String.valueOf(id));
+        Optional<Pizza> optional = pizzaRepository.findById(Long.valueOf(String.valueOf(id)));
         return optional.orElseThrow(()-> new ResourceNotFoundException(id));
     }
 
@@ -33,7 +33,7 @@ public class PizzaService {
 
     public Pizza update (Long id, Pizza pizza){
         try{
-            Pizza entity = pizzaRepository.getReferenceById(String.valueOf(id));
+            Pizza entity = pizzaRepository.getReferenceById(Long.valueOf(String.valueOf(id)));
             updateEntity(entity, pizza);
             return pizzaRepository.save(entity);
 
