@@ -49,7 +49,7 @@ public class PizzaService {
 
     public void deleteById(Long id){
         try{
-            pizzaRepository.deleteById(String.valueOf(id));
+            pizzaRepository.deleteById(Long.valueOf(String.valueOf(id)));
 
         }catch(EmptyResultDataAccessException e){
             throw new ResourceNotFoundException(id);
